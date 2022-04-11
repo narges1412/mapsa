@@ -1,14 +1,9 @@
-import sys
 
-if __name__ == "__main__":
-    n, m = input().strip().split(' ')
-    n, m = [int(n), int(m)]
-    arr = []
-    for arr_i in range(n):
-       arr_t = [int(arr_temp) for arr_temp in input().strip().split(' ')]
-       arr.append(arr_t)
-    k = int(input().strip())
-    
-    sorted_arr = sorted(arr, key = lambda x : x[k])
-    for row in sorted_arr:
-        print(' '.join(str(y) for y in row))
+n,M = map(int,input().split())
+lines = []
+for i in range(0,n):
+    lines.append(list(map(int,input().split())))   
+K=int(input())
+lines = sorted(lines,key = lambda x: x[K])
+for line in lines:
+    print (' '.join(str(k) for k in line))
